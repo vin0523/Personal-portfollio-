@@ -154,7 +154,7 @@ export default function Home() {
       <Mail className="w-5 h-5" />
     </a>
     <a
-      href="https://github.com/yourgithubusername"
+      href="https://github.com/vin0523"
       target="_blank"
       rel="noopener noreferrer"
       className="hover:text-gray-300"
