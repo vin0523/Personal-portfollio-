@@ -4,6 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
+import { FaTools, FaCode, FaMicrochip, FaLayerGroup, FaLinux } from "react-icons/fa"; // Icons for flair
+import { Mail, Linkedin, Github } from "lucide-react";
+
 
 
 export default function Home() {
@@ -21,6 +24,9 @@ export default function Home() {
         "Developed automated test cases using Python, Robot Framework, and CANoe.",
         "Validated ECU software for rear-view camera systems.",
         "Integrated test automation in CI/CD pipelines using GitLab.",
+        "Executed manual and automated software testing, including feature testing, regression testing, and system testing.",
+        "Utilized Docker for containerizing test environments, improving deployment consistency and reducing environment-related issues.",
+        "Worked in a Linux-based test environment, including using shell commands for test execution, log analysis,and environment configuration.",
       ],
     },
     {
@@ -69,43 +75,125 @@ export default function Home() {
 
   const projects = [
     {
-      title: "CAN-to-LoRa Gateway",
-      subtitle: "Telematics System for Off-Road Vehicles",
+      title: "Object Detection Using Radar",
+      subtitle: "09/2022 – 01/2023 | Texas Instruments MMWCAS-RF-EVM",
       description:
-        "Designed and built a CAN-to-LoRa gateway that transmits vehicle CAN data over long-range LoRa links.",
+        "Designed a radar-based system to detect dynamic objects using velocity data and clustering techniques.",
       details: [
-        "Built hardware using STM32 and LoRa modules.",
-        "Enabled long-distance telemetry and over-the-air updates.",
-        "Used Python and Node-RED for dashboard visualization.",
+        "Worked on MMWCAS-RF-EVM radar with real-time data streaming.",
+        "Isolated dynamic objects from static points based on velocity information.",
+        "Discovered moving point clusters and calculated their centroids.",
+        "Defined threshold logic to compare cluster centers with bounding box centers.",
       ],
     },
     {
-      title: "Rear View Camera Test Automation",
-      subtitle: "ISO 26262 Compliant ECU Validation",
+      title: "Camera Calibration and Depth Estimation",
+      subtitle: "03/2023 – 07/2023",
       description:
-        "Automated testing of rear-view camera ECUs with market-specific test suites.",
+        "Enhanced depth accuracy and image quality through precision camera calibration.",
       details: [
-        "Used Python, Robot Framework, and Vector CANoe for automation.",
-        "Tested JPN, CHN, EU, ASN market requirements.",
-        "Delivered KPIs and ensured compliance.",
+        "Calibrated camera to obtain intrinsic parameters including focal length and lens distortion.",
+        "Produced distortion coefficients and supplied comparative calibration images.",
+        "Calculated intrinsic matrix to suppress noise and improve visual clarity.",
+      ],
+    },
+    {
+      title: "Comparison of Lidar Sensors",
+      subtitle: "09/2022 – 01/2023 | Blickfeld & Velodyne",
+      description:
+        "Compared Lidar performance using point cloud analysis and spatial bounding boxes.",
+      details: [
+        "Analyzed point clouds from Blickfeld and Velodyne sensors.",
+        "Marked bounding boxes and evaluated point density inside each region.",
+        "Gained practical experience in 3D data interpretation and sensor evaluation.",
+      ],
+    },
+    {
+      title: "Coordinate Controlled Pick and Place Robot",
+      subtitle: "03/2022 – 06/2022",
+      description:
+        "Built an intelligent robotic arm guided by pathfinding algorithms for efficient object manipulation.",
+      details: [
+        "Implemented A* algorithm to compute optimal pick-and-place paths.",
+        "Engineered motion coordination for accurate object handling.",
+        "Achieved project goals with reliable autonomous task execution.",
       ],
     },
   ];
+  
 
   return (
     <div className="bg-gradient-to-b from-black via-gray-900 to-black text-white min-h-screen font-sans">
       <Head>
         <title>Vinay Bommanahalli Umesha | Embedded Systems Portfolio</title>
       </Head>
+      <header className="flex items-center justify-between px-6 py-4 bg-black bg-opacity-80 backdrop-blur-sm sticky top-0 z-50 shadow-md">
+  {/* Navigation */}
+  <nav className="hidden md:flex space-x-6">
+    <a href="#about" className="hover:text-gray-300">About</a>
+    <a href="#skills" className="hover:text-gray-300">Skills</a>
+    <a href="#projects" className="hover:text-gray-300">Projects</a>
+  
+  </nav>
+
+  {/* Socials + Resume */}
+  <div className="flex items-center space-x-4">
+    <a
+      href="https://www.linkedin.com/in/vinay-gowda-900a88216"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-blue-400"
+    >
+      <Linkedin className="w-5 h-5" />
+    </a>
+    <a
+      href="mailto:vgowda002@gmail.com"
+      className="hover:text-red-400"
+    >
+      <Mail className="w-5 h-5" />
+    </a>
+    <a
+      href="https://github.com/yourgithubusername"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-gray-300"
+    >
+      <Github className="w-5 h-5" />
+    </a>
+
+    <a
+      href="/Vinay.pdf"
+      target="_blank"
+      className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm"
+    >
+      Resume
+    </a>
+  </div>
+</header>
+
+
 
       {/* Hero Section */}
-      <section className="h-screen flex flex-col items-center justify-center text-center p-4">
+      
+      <section className="relative h-screen flex flex-col items-center justify-center text-center p-4 overflow-hidden">
+        {/* Background Image Placeholder */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/background.png" // Place your image in the /public folder
+            alt="Background"
+            fill
+            className="object-cover opacity-20 blur-sm"
+            priority
+          />
+        </div>
+
+        {/* Foreground Content */}
         <Image
-          src="/vinay.jpg"
+          src="/vinay.png"
           alt="Vinay Bommanahalli Umesha"
           width={160}
           height={160}
-          className="rounded-full mb-6 shadow-lg border-2 border-white"
+          className="w-72 h-[30rem] object-cover rounded-xl border-none shadow-lg brightness-90 contrast-90"
         />
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
@@ -126,6 +214,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
+      <section id="about" className="..."></section>
       <section className="py-16 px-4 md:px-20 text-center max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -135,13 +224,95 @@ export default function Home() {
         >
           About Me
         </motion.h2>
-        <p className="text-lg leading-relaxed mb-6">
-          I'm an Embedded Systems Engineer with hands-on experience in ECU validation, software testing, and automation at MBition (Mercedes-Benz Innovation Lab). I specialize in Python, C++, CANoe, Robot Framework, and Model-Based Design. Passionate about autonomous systems, I’ve led projects involving camera calibration, radar/lidar analysis, and CAN-to-LoRa gateway design.
+        <p className="text-lg text-gray-300 text-justify leading-relaxed">
+
+          I'm an Embedded Systems Engineer with hands-on experience in ECU validation, software testing, and automation at MBition (Mercedes-Benz Innovation Lab). I specialize in Python, C++, CANoe, Robot Framework, and Model-Based Design. Passionate about autonomous systems, I’ve led projects involving camera calibration, radar/lidar analysis.
         </p>
-        <p className="text-lg leading-relaxed">
-          I hold a Master's degree in Embedded Systems from TU Chemnitz and a Bachelor's in Electrical Engineering from Visvesvaraya Technological University. I’m driven by curiosity, purpose, and the desire to bridge the real and digital worlds through reliable embedded solutions.
+        <p className="text-lg text-gray-300 text-justify leading-relaxed">
+          I hold a Master's degree in Embedded Systems from RWU and a Bachelor's in Electrical Engineering from Gitam University. I’m driven by curiosity, purpose, and the desire to bridge the real and digital worlds through reliable embedded solutions.I solve problems in creative ways , I have learned the importance of applying classical strategies to modern-day projects.
         </p>
       </section>
+        
+{/* Skillset Section */}
+<section id="skills" className="..."></section>
+  <section className="py-16 px-4 md:px-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+
+  <h2 className="text-4xl font-bold mb-12 text-center tracking-wide">Skillset</h2>
+  <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+    {[
+      {
+        category: "Programming Languages",
+        icon: <FaCode className="text-pink-500" />,
+        skills: ["Python", "C++", "MATLAB", "CAPL", "PCB Design (KiCAD)"],
+      },
+      {
+        category: "Tools & Frameworks",
+        icon: <FaTools className="text-green-400" />,
+        skills: [
+          "Robot Framework",
+          "CANoe",
+          "OpenCV",
+          "Rest-API",
+          "Postman",
+          "ET-Framework",
+          "PuTTY",
+          "WinSCP",
+          "On/Off-board Diagnostic Tools",
+        ],
+      },
+      {
+        category: "Software Development",
+        icon: <FaCode className="text-cyan-300" />,
+        skills: ["Git", "GitHub", "GitLab", "AUTOSAR"],
+      },
+      {
+        category: "CI/CD & DevOps",
+        icon: <FaLayerGroup className="text-yellow-300" />,
+        skills: ["GitLab CI", "Jenkins", "Docker"],
+      },
+      {
+        category: "Hardware",
+        icon: <FaMicrochip className="text-indigo-400" />,
+        skills: ["Microcontrollers", "Radar", "Lidar", "FPGAs"],
+      },
+      {
+        category: "Operating Systems",
+        icon: <FaLinux className="text-red-400" />,
+        skills: ["Windows", "Linux"],
+      },
+      {
+        category: "Methodologies",
+        icon: <FaLayerGroup className="text-teal-300" />,
+        skills: ["Agile (Scrum, Kanban)", "V-Model"],
+      },
+      {
+        category: "Collaboration & Monitoring",
+        icon: <FaTools className="text-purple-300" />,
+        skills: ["Jira", "Confluence", "Grafana"],
+      },
+    ].map((group, idx) => (
+      <div
+        key={idx}
+        className="bg-black/30 border border-gray-700 rounded-xl p-6 shadow-lg hover:scale-[1.02] hover:rotate-[0.5deg] transition duration-300"
+      >
+        <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-white">
+          {group.icon}
+          {group.category}
+        </h3>
+        <ul className="list-none space-y-2">
+          {group.skills.map((skill, i) => (
+            <li
+              key={i}
+              className="text-sm text-gray-300 bg-gray-800 px-3 py-2 rounded-lg hover:bg-gray-700 transition duration-200"
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* Experience Section */}
       <section className="py-16 px-4 md:px-20">
@@ -267,6 +438,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
+      <section id="projects" className="..."></section>
       <section className="py-16 px-4 md:px-20">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -307,12 +479,12 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 text-center bg-black text-gray-400">
         <p>
-          &copy; 2025 Vinay Bommanahalli Umesha —{" "}
+          &copy; 2025 Vinay Bommanahalli Umesha{" "}
           <a
             href="mailto:vgowda002@gmail.com"
             className="underline hover:text-white"
           >
-            vgowda002@gmail.com
+          
           </a>
         </p>
       </footer>
