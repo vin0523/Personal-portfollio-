@@ -13,6 +13,7 @@ export default function Home() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const [expandedEducation, setExpandedEducation] = useState<number | null>(null);
+  
 
   const experiences = [
     {
@@ -54,7 +55,7 @@ export default function Home() {
       title: "M.Eng Electrical Engineering and Embedded Systems",
       subtitle: "Hochschule Ravensburg-Weingarten, Germany",
       duration: "02/2022 – 2024",
-      logo: "/rwu.png", // Add this in /public folder
+      logo: "/rwu.png",
       details: [
         "Key Courses: Lidar/Radar SoC, Advanced Signal Processing",
         "Embedded Computing, Control Systems, OpenCV",
@@ -65,7 +66,7 @@ export default function Home() {
       title: "B.Tech in Electrical Engineering",
       subtitle: "GITAM University, India",
       duration: "07/2018 – 04/2022",
-      logo: "/gitam.png", // Add this in /public folder
+      logo: "/gitam.png",
       details: [
         "Specialization: Robotics, Automation, IoT, Embedded Systems",
         "Hands-on Projects in Control Systems & Mechatronics",
