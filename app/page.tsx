@@ -202,7 +202,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="text-5xl md:text-7xl font-bold"
         >
-          Hi, I'm Vinay
+          Hi, I&#39;m Vinay
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -226,11 +226,11 @@ export default function Home() {
           About Me
         </motion.h2>
         <p className="text-lg text-gray-300 text-justify leading-relaxed">
-
-          I'm an Embedded Systems Engineer with hands-on experience in ECU validation, software testing, and automation at MBition (Mercedes-Benz Innovation Lab). I specialize in Python, C++, CANoe, Robot Framework, and Model-Based Design. Passionate about autonomous systems, I’ve led projects involving camera calibration, radar/lidar analysis.
+          
+          I&#39;m an Embedded Systems Engineer with hands-on experience in ECU validation, software testing, and automation at MBition (Mercedes-Benz Innovation Lab). I specialize in Python, C++, CANoe, Robot Framework, and Model-Based Design. Passionate about autonomous systems, I’ve led projects involving camera calibration, radar/lidar analysis.
         </p>
         <p className="text-lg text-gray-300 text-justify leading-relaxed">
-          I hold a Master's degree in Embedded Systems from RWU and a Bachelor's in Electrical Engineering from Gitam University. I’m driven by curiosity, purpose, and the desire to bridge the real and digital worlds through reliable embedded solutions.I solve problems in creative ways , I have learned the importance of applying classical strategies to modern-day projects.
+          I hold a Master&#39;s degree in Embedded Systems from RWU and a Bachelor&#39;s in Electrical Engineering from Gitam University. I&#39;m driven by curiosity, purpose, and the desire to bridge the real and digital worlds through reliable embedded solutions.I solve problems in creative ways , I have learned the importance of applying classical strategies to modern-day projects.
         </p>
       </section>
         
