@@ -227,7 +227,7 @@ export default function Home() {
         </motion.h2>
         <p className="text-lg text-gray-300 text-justify leading-relaxed">
           
-          I&#39;m an Embedded Systems Engineer with hands-on experience in ECU validation, software testing, and automation at MBition (Mercedes-Benz Innovation Lab). I specialize in Python, C++, CANoe, Robot Framework, and Model-Based Design. Passionate about autonomous systems, I’ve led projects involving camera calibration, radar/lidar analysis.
+          I&#39;m an Embedded Systems Engineer with hands-on experience in ECU validation, software testing, and automation at MBition (Mercedes-Benz Innovation Lab). I specialize in Python, C++, CANoe, Robot Framework, and Model-Based Design. Passionate about autonomous systems, I&#39;ve led projects involving camera calibration, radar/lidar analysis.
         </p>
         <p className="text-lg text-gray-300 text-justify leading-relaxed">
           I hold a Master&#39;s degree in Embedded Systems from RWU and a Bachelor&#39;s in Electrical Engineering from Gitam University. I&#39;m driven by curiosity, purpose, and the desire to bridge the real and digital worlds through reliable embedded solutions.I solve problems in creative ways , I have learned the importance of applying classical strategies to modern-day projects.
@@ -336,11 +336,13 @@ export default function Home() {
               className={`rounded-2xl p-6 bg-white/10 border border-white/20 cursor-pointer shadow-xl transition-all duration-300 ease-in-out hover:bg-white/20 hover:shadow-2xl flex flex-col md:flex-row items-start md:items-center`}
             >
               <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
-                <img
-                  src="/mbition.png"
-                  alt="MBition Logo"
-                  className="w-16 h-16 object-contain"
-                />
+                <Image
+                src="/mbition.png"
+                alt="MBition Logo"
+                width={64} // or actual width
+                height={64} // or actual height
+                className="object-contain"
+              />
               </div>
 
               <div className="flex-1">
