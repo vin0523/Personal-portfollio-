@@ -31,7 +31,7 @@ export default function Home() {
       ],
     },
     {
-      title: "Software Test Engineer · 02/2024 – 01/2025",
+      title: "Software Engineer in Test · 02/2024 – 01/2025",
       subtitle: "MBition (Mercedes-Benz Innovation Lab)",
       description:
         "Supported software-based issue reproduction, simulation, debugging, and automated test framework development for vehicle functions and infotainment.",
